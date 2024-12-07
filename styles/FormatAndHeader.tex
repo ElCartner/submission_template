@@ -4,17 +4,18 @@
 % Change standard Sans-Serif Font
 \renewcommand{\sfdefault}{phv} %phv = helvetica from package
 
-
+%Koma-script for header/footer
+\setkomafont{pageheadfoot}{\sffamily}
+\setkomafont{pagination}{}
+\KOMAoptions{
+   headsepline = true,
+}
 
 % Header and footer
-\pagestyle {fancy}
-\fancyhead[L]{\textsf{\textbf{\COURSE}\\ Übungsgruppe \GROUP}}
-\fancyhead[C]{}
-\fancyhead[R]{\textsf{Übungsblatt \NUMBER\\\today}}
-
-\fancyfoot[L]{}
-\fancyfoot[C]{}
-\fancyfoot[R]{\textsf{Seite \thepage}}
+\ihead{\textsf{\textbf{\COURSE}\\ Übungsgruppe \GROUP}}
+\ohead{\textsf{Übungsblatt \NUMBER\\\today}}
+\ofoot{Seite \thepage / \pageref*{LastPage}}
+\cfoot{}
 
 % Definition of the first-page header
 \def\header#1#2{
