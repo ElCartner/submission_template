@@ -1,0 +1,139 @@
+% This tex file contains some example content for the submission template.
+
+\section*{Teil A}
+\subsection*{Aufgabe 1}
+\subsubsection*{a)}
+
+\begin{enumerate}[label=\roman*.]
+	\item  Ist eine korrekte und sinnvdolle Nachbedingung. Der Inhalt von i. ist korrekt und erklärt auch sinnvoll, was passiert ist.
+	\item  Ist falsch. Wenn auf keinem der Felder, die Paule überquert hat, Körner lagen, lässt sich keine Aussage über den Inhalt von Paules Mund treffen.
+	\item  Ist auch falsch. Paule läuft in einer geraden Linie und hebt die Körner auf den Feldern auf, bis er eine Wand erreicht. Er hebt auf dem letzten Feld direkt vor einer Wand keine Körner auf, also könnten auf diesem Feld noch Körner liegen unabhängig davon, wie groß das Spielfeld ist und auf welchem Feld Paule startet, worüber wir auch keine Informationen haben.
+\end{enumerate}
+
+\subsection*{Aufgabe 2}
+\begin{shadedbox}
+	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+	magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\end{shadedbox}
+
+
+\subsection*{Aufgabe 3}
+\subsubsection*{(a)}
+
+\begin{table}[H]
+	%\small
+	\begin{tabularx}{\linewidth}{ c | X| X| X }
+		\arrayrulecolor{gray}
+		\rowcolor{lightgray!30}
+		  & Datentyp                  & Wert                               & Attribute                                                                                                                            \\
+		\hline
+		1 & Objekt der Klasse Hamster & Referenz auf entsprechendes Objekt & \texttt{territory}: [Territory-Objekt], \texttt{location}: (1,1), \texttt{direction}: \texttt{EAST}, \texttt{grainCount}: \texttt{0} \\ \hline
+		2 & Long (Wrapper)            & Referenz                           & long-Wert: 24756                                                                                                                     \\ \hline
+		3 & boolean                   & \texttt{true}                      &                                                                                                                                      \\ \hline
+		4 & float                     & \texttt{1.5f}                      &                                                                                                                                      \\ \hline
+		5 & boolean                   & \texttt{true}                      &                                                                                                                                      \\ \hline
+		6 & String (Objekt)           & Referenz                           & (Das Objekt speichert:) "The size of the territory is 3 x 3 !"                                                                       \\ \hline
+		7 & Location (Objekt)         & Referenz                           & \texttt{row: 1 column: 1}                                                                                                            \\ \hline
+		8 & int                       & 2                                  &                                                                                                                                      \\ \hline
+		9 & int                       & 2147483647                         &                                                                                                                                      \\
+	\end{tabularx}
+\end{table}
+
+\subsubsection*{(b)}
+
+\begin{lstlisting}
+    int numberOfColumns = 
+        paule.getTerritory().getTerritorySize().getColumnCount();
+\end{lstlisting}
+
+\section*{Teil B}
+
+\subsection*{Aufgabe 4}
+\subsubsection*{a)}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua \ref{fig:baum}. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[level/.style ={sibling distance=60mm/#1}]
+		\node[circle,draw] (a) {A}
+		child {node [circle,draw] (b) {B}
+				child {node [circle,draw] (c) {C}}
+				child {node [circle, draw] (d) {D}}
+			}
+		child {node [circle, draw] (e) {E}
+				child[missing] {node {}}
+				child {node [circle, draw] (f) {F}}
+			};
+	\end{tikzpicture}
+	\caption{Bin"arbaum, der mit Tikzpicture erzeugt wurde}
+	\label{fig:baum}
+\end{figure}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum \ref{fig:automat}. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[initial text={}]
+		\node[state,initial] (q0) {$q_0$};
+		\node[state] (q1) [below right=of q0] {$q_1$};
+		\node[state] (q2) [above right=of q0] {$q_2$};
+		\node[state,accepting] (q3) [right=of q1] {$q_3$};
+		\path[->] (q0) edge node[below left]{$a$} (q1);
+		\path[->] (q0) edge node[above left]{$b$} (q2);
+		\path[->,loop above] (q2) edge node{$b$} (q2);
+		\path[->] (q2) edge node[left]{$a$} (q1);
+		\path[->] (q1) edge node[below]{$a$} (q3);
+		\path[->,loop below] (q1) edge node{$b$} (q1);
+		\path[->,loop right] (q3) edge node{$a,b$} (q3);
+	\end{tikzpicture}
+	\caption{Endlicher Automat, der mit Tikzpicture erzeugt wurde}
+	\label{fig:automat}
+\end{figure}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+\subsection*{Aufgabe 5}
+\subsubsection*{a)}
+
+Different ways of implementing math stuff:
+You can put it $\sqrt{x^2+1}$ inside text.
+Or like this:
+\begin{math}
+	\sqrt{x^2+1}
+\end{math}
+looks quite the same, eh?
+
+
+\[\sqrt{x^2+1}\]
+Blabla
+
+blablablabla blabla
+\begin{displaymath}
+	\sqrt{x^2+1}
+\end{displaymath}
+
+blablabla
+\begin{equation*}
+	\sqrt{x^2+1}
+\end{equation*}
+
+Blablabla
+\begin{equation}
+	\sqrt{x^2+1}
+\end{equation}
+
+\subsection*{Aufgabe 6}
+
+\begin{minipage}{0.45\textwidth}
+	\verb|{tabularx}| \\[2ex]
+	\rowcolors{3}{green!50}{orange!60}
+	\begin{tabularx}{40mm}{X}
+		1 \\ 2 \\ 3 \\ 4 \\ 5 \\ 6 \\
+	\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+	\verb|{tabular}| \\[2ex]
+	\rowcolors{3}{gray!50}{violet!60}
+	\begin{tabular}{p{40mm}}
+		1 \\ 2 \\ 3 \\ 4 \\ 5 \\ 6 \\
+	\end{tabular}
+\end{minipage}
+

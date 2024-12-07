@@ -1,0 +1,44 @@
+% Here you can adjust page format parameters
+\geometry{a4paper,left=2.5cm, right=2.5cm, top=3.0cm, bottom=3cm}
+
+% Change standard Sans-Serif Font
+\renewcommand{\sfdefault}{phv} %phv = helvetica from package
+
+
+
+% Header and footer
+\pagestyle {fancy}
+\fancyhead[L]{\textsf{\textbf{\COURSE}\\ Übungsgruppe \GROUP}}
+\fancyhead[C]{}
+\fancyhead[R]{\textsf{Übungsblatt \NUMBER\\\today}}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\textsf{Seite \thepage}}
+
+% Definition of the first-page header
+\def\header#1#2{
+  \begin{table*}[h]
+    \small
+    \sffamily
+    \itshape
+    \begin{tabularx}{\linewidth}{|| X | c | c }
+      \arrayrulecolor{lightgray}
+      \STUDENTA \\
+      \hline
+      \STUDENTB \\
+    \end{tabularx}
+  \end{table*}
+  \begin{center}
+    {\Large{\textsf{\textbf{Übungsblatt Nr. #1}}}}\\
+    {(\textsf{Abgabetermin #2)}}
+  \end{center}
+}
+
+
+
+
+
+
+
+
